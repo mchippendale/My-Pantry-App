@@ -1,0 +1,15 @@
+
+
+<a href="/items/:id/new">Stock my pantry</a><br>
+<a href="/">Close pantry</a>
+
+
+<% items.each do |item| %>
+
+    <h2><%= item['name'] %></h2>
+
+    <img src="<%= item['image_url'] %>" alt="">
+
+    <p><%= item['comment'] %></p>
+
+<% end %>

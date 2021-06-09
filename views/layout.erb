@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="header-wrapper"> 
+
+    <% if logged_in? %>
+
+      <p class="user_email">Welcome back, <%= current_user()['email'] %></p>
+
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="logout-button">Log out</button><br>
+      </form>
+
+    <% else %>
+
+      <a href="/session" class="login-button">Log In</a>
+
+  <% end %>
+
+  </header>
+
+  <main>
+
+    <%= yield %>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+body {
+    color: blue
+}
+
+.header-wrapper {
+    display: flex;
+    place-items: right;
+}
+
+h1 {
+    color: blue;
+}
+
+img {
+    width: 100px;
+}

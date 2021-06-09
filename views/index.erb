@@ -1,0 +1,13 @@
+
+
+<h1>The My Pantry Kitchen</h1>
+
+<% if logged_in? %>
+    <a href="/items/<%= session[:user_id] %>">View my pantry</a>
+<% end %>
+
+
+
+
+
+

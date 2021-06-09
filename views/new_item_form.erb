@@ -1,0 +1,17 @@
+
+<h2>Share a new time in your pantry</h2>
+
+<form action="/items/<%= session[:user_id] %>/new" method="post">
+    
+    <label for="">Item name: </label>
+    <input type="text" name="email" class="">
+
+    <label for="">Image url: </label>
+    <input type="text" name="image_url" class="">
+
+    <label for="">Comment: </label>
+    <input type="text" name="comment" class="">
+
+    <button>Place in pantry</button>
+
+</form>
