@@ -9,32 +9,45 @@
 <body>
 
   <header class="header-wrapper"> 
+    
+    <div class="login-btn-wrapper">
 
-    <% if logged_in? %>
+      <% if logged_in? %>
+        <p class="user_email">Welcome back, <%= current_user()['username'] %></p>
+        <form action="/session" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button class="logout-button">Log out</button><br>
+        </form>
+      <% else %>
+        <a href="/session" class="login-button">Log In</a>
+      <% end %>
 
-      <p class="user_email">Welcome back, <%= current_user()['email'] %></p>
+    </div>
 
-      <form action="/session" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button class="logout-button">Log out</button><br>
-      </form>
-
-    <% else %>
-
-      <a href="/session" class="login-button">Log In</a>
-
-  <% end %>
+    
+    <div class="header-shelf">
+      
+    </div>
 
   </header>
+  <div class="main-wrapper">
 
-  <main>
+    <aside>
+      left
+    </aside>
+    <main>
 
-    <%= yield %>
+      <%= yield %>
 
-  </main>
+    </main>
+    <aside>
+      right
+    </aside>
+
+  </div>
 
   <footer>
-
+    footer
   </footer>
 
 </body>

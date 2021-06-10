@@ -17,3 +17,19 @@ def run_sql(sql, params = [])
     return res
   
 end
+
+def random_user_id(array)
+
+    users = []
+
+    array.each do |user| 
+  
+        users.push(user.fetch("id"))
+    
+    end
+
+    users.sample
+
+end
+
+

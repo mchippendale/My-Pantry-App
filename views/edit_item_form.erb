@@ -1,0 +1,19 @@
+
+<h2>Update your pantry item</h2>
+
+<form action="/items/<%= items['id'] %>/edit" method="post">
+    <input type="hidden" name="_method" value="put"><br><br>
+
+    
+    <label for="">Item name: </label>
+    <input type="text" name="name" value="<%= items['name'] %>"><br><br>
+
+    <label for="">Image url: </label>
+    <input type="text" name="image_url" value="<%= items['image_url'] %>"><br><br>
+
+    <label for="">Comment: </label>
+    <input type="text" name="comment" value="<%= items['comment'] %>"><br><br>
+
+    <button>Update item</button>
+
+</form>

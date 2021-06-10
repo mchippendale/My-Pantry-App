@@ -1,17 +1,54 @@
 
+
+body, .header-wrapper, main, aside, footer {
+    border: 1px solid black;
+}
+
 body {
-    color: blue
+    height: 900px
 }
 
 .header-wrapper {
-    display: flex;
-    place-items: right;
+   height: 12%;
 }
 
-h1 {
-    color: blue;
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    height: 75%;
 }
+
+.view-pantry {
+    margin-bottom: 15px;
+}
+
+.featured-pantry-container {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    
+}
+
+.pantry1-wrapper, .pantry2-wrapper, .pantry3-wrapper, .pantry4-wrapper  {
+    border: 1px solid red;
+    display: inline-block;
+    width: 100%;
+    height: 350px;
+    font-size: 12px;
+}
+
+.header-shelf{
+    height: 25px;
+    background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.30);
+}
+
 
 img {
-    width: 100px;
+    width: 60px;
+}
+
+footer {
+    height: 10%;
 }

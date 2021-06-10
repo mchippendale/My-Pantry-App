@@ -1,12 +1,59 @@
 
 
-<h1>The My Pantry Kitchen</h1>
+<h1>The Neighbourhood Pantry </h1>
+<div class="view-pantry">
 
-<% if logged_in? %>
-    <a href="/items/<%= session[:user_id] %>">View my pantry</a>
-<% end %>
+      <% if logged_in? %>
+        <a href="/items/<%= session[:user_id] %>">View my pantry</a>
+      <% end %>
 
+</div>
 
+<div class="featured-pantry-container">
+    <div class="pantry1-wrapper">
+        <h3><%= pantry1[0]['username'] %></h3>
+        <% pantry1.each do |item| %>
+
+            <p><%= item['name'] %></p>
+            <img src="<%= item['image_url'] %>" alt="">
+            <img src="<%= item['image_upload'] %>" alt=""> 
+
+        <% end %>
+    </div>
+
+    <div class="pantry2-wrapper">
+        <h3><%= pantry2[0]['username'] %></h3>
+        <% pantry2.each do |item| %>
+
+            <p><%= item['name'] %></p>
+            <img src="<%= item['image_url'] %>" alt="">
+            <img src="<%= item['image_upload'] %>" alt=""> 
+
+        <% end %>
+    </div>
+
+    <div class="pantry3-wrapper">
+        <h3><%= pantry3[0]['username'] %></h3>
+        <% pantry3.each do |item| %>
+
+            <p><%= item['name'] %></p>
+            <img src="<%= item['image_url'] %>" alt="">
+            <img src="<%= item['image_upload'] %>" alt=""> 
+
+        <% end %>
+    </div>
+
+    <div class="pantry4-wrapper">
+        <h3><%= pantry4[0]['username'] %></h3>
+        <% pantry4.each do |item| %>
+
+            <p><%= item['name'] %></p>
+            <img src="<%= item['image_url'] %>" alt="">
+            <img src="<%= item['image_upload'] %>" alt=""> 
+
+        <% end %>
+    </div>
+</div>
 
 
 
