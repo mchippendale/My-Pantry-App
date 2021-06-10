@@ -1,0 +1,18 @@
+
+
+<h2>Welcome to <%= items[0]['username'] %>'s Pantry'</h2>
+
+
+<% items.each do |item| %>
+
+    <h2><%= item['name'] %>'s Pantry</h2>
+
+    <img src="<%= item['image_url'] %>" alt="">
+    <img src="<%= item['image_upload'] %>" alt="">
+
+    <p><%= item['comment'] %></p>
+
+
+<% end %>
+
+    <a href="/">Return home</a>

@@ -13,8 +13,8 @@ enable :sessions
 
 options = {
   cloud_name: "sei44", 
-  api_key: "316847847996641",
-  api_secret: "tUYkY7iicu4V4eI5i9s9RcJZ_xo"
+  api_key: ENV['CLOUDINARY_API_KEY'],
+  api_secret: ENV['CLOUDINARY_API_SECRET_KEY']
 }
 
 def current_user
@@ -43,10 +43,10 @@ get '/' do
   items = run_sql("SELECT * FROM users;")
   random_user_id(items)
 
-  sql_1 = "SELECT name, image_url, username, image_upload FROM items WHERE user_id = #{random_user_id(items)};"
-  sql_2 = "SELECT name, image_url, username, image_upload FROM items WHERE user_id = #{random_user_id(items)};"
-  sql_3 = "SELECT name, image_url, username, image_upload FROM items WHERE user_id = #{random_user_id(items)};"
-  sql_4 = "SELECT name, image_url, username, image_upload FROM items WHERE user_id = #{random_user_id(items)};"
+  sql_1 = "SELECT name, image_url, username, image_upload, user_id FROM items WHERE user_id = #{random_user_id(items)};"
+  sql_2 = "SELECT name, image_url, username, image_upload, user_id FROM items WHERE user_id = #{random_user_id(items)};"
+  sql_3 = "SELECT name, image_url, username, image_upload, user_id FROM items WHERE user_id = #{random_user_id(items)};"
+  sql_4 = "SELECT name, image_url, username, image_upload, user_id FROM items WHERE user_id = #{random_user_id(items)};"
 
   pantry1 = run_sql(sql_1)
 
@@ -61,7 +61,12 @@ get '/' do
   
 end
 
+get '/items/:id' do
 
+  items = run_sql("SELECT name, image_url, username, image_upload, comment FROM items WHERE user_id = #{params['id']};")
+  erb :show_pantry, locals: { items: items}
+
+end
 
 
 get '/session' do
@@ -127,7 +132,7 @@ get '/items/:id' do
 
   items = res.to_a
 
-  erb :show_item, locals: { items: items }
+  erb :show_my_items, locals: { items: items }
 
 end
 
@@ -148,12 +153,16 @@ end
 
 put '/items/:id/edit' do
 
+  res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+  image_upload = res['url']
+
   user_id = session[:user_id].to_i
-  sql = "UPDATE items SET name = $1, image_url = $2, comment = $3, user_id = $4 WHERE id = #{params['id']}"
+  sql = "UPDATE items SET name = $1, image_url = $2, image_upload = $3, comment = $4, user_id = $5 WHERE id = #{params['id']};"
 
   run_sql(sql,  [
     params['name'],
     params['image_url'],
+    image_upload,
     params['comment'],
     user_id
   ])
@@ -166,19 +175,23 @@ end
 post '/items/:id/new' do
 
   user_id = session[:user_id].to_i
-
-  res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+  user = run_sql("SELECT username FROM users WHERE id = #{user_id}")[0]
+  username = user['username']
+  
   binding.pry
 
+  res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+
   image_upload = res['url']
-  sql = "INSERT INTO items (name, image_url, comment, user_id, image_upload) VALUES ($1, $2, $3, $4, $5);"
+  sql = "INSERT INTO items (name, image_url, comment, user_id, username, image_upload) VALUES ($1, $2, $3, $4, $5, $6);"
 
   run_sql(sql, [
     params['name'],
     params['image_url'],
     params['comment'],
     user_id,
-    image_upload
+    username,
+    image_upload,
   ])
 
   redirect "/items/:id"

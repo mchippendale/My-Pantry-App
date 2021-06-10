@@ -5,7 +5,8 @@ body, .header-wrapper, main, aside, footer {
 }
 
 body {
-    height: 900px
+    height: 900px;
+    font-family: 'Comfortaa', cursive;
 }
 
 .header-wrapper {
@@ -18,8 +19,14 @@ body {
     height: 75%;
 }
 
+.main-heading {
+    text-align: center;
+    font-family: 'Comfortaa';
+}
+
 .view-pantry {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .featured-pantry-container {
@@ -27,14 +34,14 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
+    place-items: center;
     
 }
 
 .pantry1-wrapper, .pantry2-wrapper, .pantry3-wrapper, .pantry4-wrapper  {
     border: 1px solid red;
-    display: inline-block;
     width: 100%;
-    height: 350px;
+    height: 100%;
     font-size: 12px;
 }
 
