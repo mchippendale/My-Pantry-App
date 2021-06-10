@@ -1,7 +1,5 @@
 require 'sinatra' 
-require 'sinatra/reloader' if development?
 require 'bcrypt'
-require 'pry' if development?
 require 'cloudinary'
 
 
@@ -125,7 +123,7 @@ delete '/session' do
 end
 
 
-get '/items/:id' do
+get '/session/:id' do
 
   user_id = session[:user_id].to_i
   res = run_sql("SELECT * FROM items WHERE user_id = #{user_id};")

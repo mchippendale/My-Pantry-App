@@ -1,7 +1,7 @@
 
 
 body, .header-wrapper, main, aside, footer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 body {
@@ -9,8 +9,62 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
+main {
+    /* background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg); */
+    /* background: cover; */
+}
+
 .header-wrapper {
-   height: 12%;
+   display: grid;
+   grid-template-rows: 2fr 1fr 2fr;
+   height: 150px
+}
+
+.pantry-background {
+    background-image: url(/stylesheets/pantry.png);
+    background-size: 460px;
+    height: 60px;
+    opacity: 80%;
+}
+
+.sign-in-out-btn, .welcome-back {
+    display: inline-block;
+}
+
+.login-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    margin: 0px;
+}
+
+.user_email {
+    background: white;
+    width: 200px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.login-button, .logout-button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    float: right;
+    justify-content: center;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 120px;
+    cursor: pointer;
 }
 
 .main-wrapper {
@@ -22,6 +76,20 @@ body {
 .main-heading {
     text-align: center;
     font-family: 'Comfortaa';
+    margin-top: 30px;
+}
+
+.main-heading1 {
+    text-align: center;
+    font-family: 'Comfortaa';
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.view-pantry {
+    margin-top: 20px;
 }
 
 .view-pantry {
@@ -30,32 +98,104 @@ body {
 }
 
 .featured-pantry-container {
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
     place-items: center;
-    
+    width: 95%;
+    margin: 0 auto;
+    /* height: ; */
+
 }
 
 .pantry1-wrapper, .pantry2-wrapper, .pantry3-wrapper, .pantry4-wrapper  {
-    border: 1px solid red;
-    width: 100%;
+    border-style: solid;
+    border-width: 7px 7px 7px 7px;
+    border-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg) 10 repeat repeat;
+    background-color: white;
+    /* border-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg) 10 10 10 10 repeat repeat; */
+    width: 90%;
     height: 100%;
     font-size: 12px;
+    display: grid;
+    place-items: center;
+    text-align: center;
 }
 
-.header-shelf{
-    height: 25px;
+.pantry-names {
+    margin-top: 10px;
+}
+
+.header-shelf1{
+    height: 15px;
     background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
     box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.30);
 }
 
+.header-shelf2{
+    height: 10px;
+    background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
+}
+
+aside {
+    border-style: solid;
+    border-width: 7px 7px 7px 7px;
+    border-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg) 10 repeat repeat;
+    background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.side-shelf {
+    background-color: white;
+    height: 210px;
+}
+
+/* #shelf-1 {
+    background-image: url(/stylesheets/jars.png);
+    background-size: contain;
+}
+
+#shelf-3 {
+    background-image: url(/stylesheets/sixjars.png);
+    background-size: contain;
+}
+
+#shelf-5 {
+    background-image: url(/stylesheets/nuts.png);
+    background-size: contain;
+} */
 
 img {
     width: 60px;
 }
 
+/* show my items */
+
+.show-my-items-wrapper {
+    border: 1px solid black;
+    width: 70%; 
+    height: 70%;
+    margin: 100px 150px;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.my-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.my-item {
+    display: inline-block;
+}
+
+.update-item {
+    font-size: 10px;
+}
+
+
 footer {
-    height: 10%;
+    height: 50px;
+    background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
 }

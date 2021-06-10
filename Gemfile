@@ -6,3 +6,4 @@ gem 'bcrypt'
 gem 'httparty'
 gem 'cloudinary'
 
+

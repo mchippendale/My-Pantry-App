@@ -14,30 +14,38 @@
 
   <header class="header-wrapper"> 
     
-    <div class="login-btn-wrapper">
-
-      <% if logged_in? %>
-        <p class="user_email">Welcome back, <%= current_user()['username'] %></p>
-        <form action="/session" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <button class="logout-button">Log out</button><br>
-        </form>
-      <% else %>
-        <a href="/session" class="login-button">Log In</a>
-      <% end %>
+    <div class="pantry-background">
 
     </div>
-
-    
-    <div class="header-shelf">
+    <div class="header-shelf1">
       
     </div>
-
+    <div class="login-btn-wrapper">
+      <% if logged_in? %>
+        <div class="welcome-back"><p class="user_email">Welcome back, <%= current_user()['username'] %></p></div>
+        <h1 class="main-heading1">The Neighbourhood Pantry </h1>
+        <form action="/session" method="post" class="sign-in-out-btn">
+          <input type="hidden" name="_method" value="delete">
+          <button class="logout-button">Sign Out</button><br>
+        </form>
+      <% else %>
+        <div class="welcome-back"><p class="user_email">Welcome!</p></div>
+        <h1 class="main-heading1">The Neighbourhood Pantry </h1>
+        <form action="/session">
+          <button class="login-button">Sign In</button>
+        </form>
+      <% end %>
+    </div>
+    <div class="header-shelf2">
+      
+    </div>
   </header>
   <div class="main-wrapper">
 
     <aside>
-      left
+      <div class="side-shelf" id="shelf-1"></div>
+      <div class="side-shelf"></div>
+      <div class="side-shelf" id='shelf-3'></div>
     </aside>
     <main>
 
@@ -45,13 +53,15 @@
 
     </main>
     <aside>
-      right
+      <div class="side-shelf"></div>
+      <div class="side-shelf" id="shelf-5"></div>
+      <div class="side-shelf"></div>
     </aside>
 
   </div>
 
   <footer>
-    footer
+    
   </footer>
 
 </body>

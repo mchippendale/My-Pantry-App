@@ -1,18 +1,25 @@
 
 
-<a href="/items/<%= session[:user_id] %>/new">Stock my pantry</a><br><br>
-<a href="/">Close pantry</a>
 
+<div class="show-my-items-wrapper">
+    <div>
+        <a href="/items/<%= session[:user_id] %>/new">Stock my pantry</a><br><br>
+        <a href="/">Close pantry</a>
+    </div>
 
-<% items.each do |item| %>
+    <div class="my-items-wrapper">
+    <% items.each do |item| %>
+        <div class="my-item">
+            <h2><%= item['name'] %></h2>
 
-    <h2><%= item['name'] %></h2>
+            <img src="<%= item['image_url'] %>" alt="">
+            <img src="<%= item['image_upload'] %>" alt="">
 
-    <img src="<%= item['image_url'] %>" alt="">
-    <img src="<%= item['image_upload'] %>" alt="">
+            <p><%= item['comment'] %></p>
 
-    <p><%= item['comment'] %></p>
+            <a href="/items/<%= item['id'] %>/edit" class="update-item">Update item</a>
+        </div>
+    <% end %>
+    </div>
 
-    <a href="/items/<%= item['id'] %>/edit">Update item</a>
-
-<% end %>
+</div>
