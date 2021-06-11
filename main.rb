@@ -1,7 +1,8 @@
 require 'sinatra' 
 require 'bcrypt'
 require 'cloudinary'
-require 'pry'
+require 'pry' if development?
+require 'sinatra/reloader' if development?
 
 
 require_relative 'db/helper.rb'
