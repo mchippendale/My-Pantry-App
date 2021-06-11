@@ -16,6 +16,7 @@ a {
 main {
     /* background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg); */
     /* background: cover; */
+    display: grid
 }
 
 .header-wrapper {
@@ -76,14 +77,13 @@ main {
 .main-wrapper {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    height: 75%;
+    height: 80%;
 }
 
 .main-heading {
     text-align: center;
     font-family: 'Comfortaa';
     margin-top: 40px;
-    font-size: 100%;
 }
 
 .main-heading1 {
@@ -93,6 +93,11 @@ main {
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    font-size: relative;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 126, 60);
 }
 
 
@@ -104,10 +109,10 @@ main {
 
 #open-your-pantry {
     width: 25%;
-    color: white;
+    color: rgb(24, 126, 60);
     padding: 8px;
     border-radius: 10px;
-    background-color: rgb(24, 126, 60);
+    border: 2px solid rgb(24, 126, 60);
     text-decoration: none;
 }
 
