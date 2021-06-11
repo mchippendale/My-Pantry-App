@@ -14,7 +14,14 @@
 
                 <p><%= item['comment'] %></p>
 
-                <a href="/items/<%= item['id'] %>/edit" class="update-item">Update item</a>
+                <a href="/items/<%= item['id'] %>/edit" class="update-item">Update item</a><br><br>
+
+                <form action="/session/<%= item['id'] %>/delete" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="throw-out-btn">Throw out item</button>
+                </form>
+                <!-- <a href="/items/<%= item['id'] %>/delete" class="update-item">Throw out item</a> -->
+
             </div>
         <% end %>
     </div>

@@ -1,23 +1,26 @@
 
+<div class="signin-page-wrapper">
+    <h2>Create your account</h2>
 
-<h2>Create your My Pantry account</h2>
+    <div>
 
-<div>
+        <form action="/session/new-user" method="post">
+            
+            <label for="name">New email: </label>
+            <input type="text" name="email" class=""><br><br>
 
-    <form action="/session/new-user" method="post">
-        
-        <label for="name">New email: </label>
-        <input type="text" name="email" class=""><br><br>
+            <label for="">Username: </label>
+            <input type="text" name="username"><br><br>
 
-        <label for="">Username: </label>
-        <input type="text" name="username"><br><br>
+            <label for="password">New password: </label>
+            <input type="password" name="password" class=""><br><br>
 
-        <label for="password">New password: </label>
-        <input type="password" name="password" class=""><br><br>
-
-        <button> Create Account </button>
+            <button> Create Account </button>
 
 
-    </form>
+        </form>
+
+    </div>
+
 
 </div>

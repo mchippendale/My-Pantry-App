@@ -136,6 +136,18 @@ get '/session/:id' do
 
 end
 
+delete '/session/:id/delete' do
+  # if !logged_in?
+  #   redirect '/login'
+  # end
+
+  # redirect '/login' unless logged_in? # syntactic sugar 
+  user_id = session[:user_id].to_i
+  sql = run_sql("DELETE FROM items WHERE id = #{params['id']};")
+
+  redirect "/session/#{user_id}"
+
+end
 
 get '/items/:id/new' do
 
