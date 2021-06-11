@@ -1,5 +1,4 @@
 require 'sinatra' 
-require 'sinatra/reloader'
 require 'bcrypt'
 require 'cloudinary'
 require 'pry'
