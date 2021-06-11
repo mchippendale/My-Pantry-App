@@ -1,6 +1,8 @@
 require 'sinatra' 
+require 'sinatra/reloader'
 require 'bcrypt'
 require 'cloudinary'
+require 'pry'
 
 
 require_relative 'db/helper.rb'
@@ -151,8 +153,12 @@ end
 
 put '/items/:id/edit' do
 
-  res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
-  image_upload = res['url']
+  image_upload = ""
+
+  if params["image_upload"] 
+    res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+    image_upload = res['url']
+  end
 
   user_id = session[:user_id].to_i
   sql = "UPDATE items SET name = $1, image_url = $2, image_upload = $3, comment = $4, user_id = $5 WHERE id = #{params['id']};"
@@ -176,8 +182,6 @@ post '/items/:id/new' do
   user = run_sql("SELECT username FROM users WHERE id = #{user_id}")[0]
   username = user['username']
   
-  binding.pry
-
   res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
 
   image_upload = res['url']

@@ -9,6 +9,10 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
+a {
+    color: rgb(24, 126, 60)
+}
+
 main {
     /* background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg); */
     /* background: cover; */
@@ -17,7 +21,7 @@ main {
 .header-wrapper {
    display: grid;
    grid-template-rows: 2fr 1fr 2fr;
-   height: 150px
+   height: 180px
 }
 
 .pantry-background {
@@ -36,8 +40,9 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 70px;
+    height: 90px;
     margin: 0px;
+    color: rgb(24, 126, 60)
 }
 
 .user_email {
@@ -48,13 +53,14 @@ main {
     margin-left: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
+    color: rgb(24, 126, 60)
 }
 
 .login-button, .logout-button {
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(24, 126, 60);
     border-radius: 5px;
-    color: black;
+    color: rgb(24, 126, 60);
     padding: 4px 10px;
     text-align: center;
     text-decoration: none;
@@ -76,25 +82,33 @@ main {
 .main-heading {
     text-align: center;
     font-family: 'Comfortaa';
-    margin-top: 30px;
+    margin-top: 40px;
+    font-size: 100%;
 }
 
 .main-heading1 {
     text-align: center;
     font-family: 'Comfortaa';
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.view-pantry {
-    margin-top: 20px;
-}
 
 .view-pantry {
-    margin-bottom: 15px;
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#open-your-pantry {
+    width: 25%;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 126, 60);
+    text-decoration: none;
 }
 
 .featured-pantry-container {
@@ -103,6 +117,7 @@ main {
     place-items: center;
     width: 95%;
     margin: 0 auto;
+    margin-top: 50px;
     /* height: ; */
 
 }
@@ -132,7 +147,7 @@ main {
 }
 
 .header-shelf2{
-    height: 10px;
+    height: 15px;
     background-image: url(https://t3.ftcdn.net/jpg/02/70/26/70/360_F_270267008_6PAgjlfoT43nTJT8chbSUzcSI2JW8il4.jpg);
 }
 
@@ -173,17 +188,20 @@ img {
 /* show my items */
 
 .show-my-items-wrapper {
-    border: 1px solid black;
+    border: 5px solid rgba(24, 126, 59, 0.738);
+    border-radius: 5px;
     width: 70%; 
     height: 70%;
-    margin: 100px 150px;
+    margin: 0 auto;
+    margin-top: 100px;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 5fr 1fr;
 }
 
 .my-items-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
 }
 
 .my-item {
@@ -193,6 +211,29 @@ img {
 .update-item {
     font-size: 10px;
 }
+
+/* Open pantry */
+
+.show-pantry-wrapper {
+    border: 2px solid rgb(21, 112, 53);
+    border-radius: 5px;
+    width: 70%; 
+    height: 70%;
+    display: grid;
+    /* grid-template-rows: 1fr 5fr; */
+}
+
+.open-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.pantry-item {
+    display: inline-block;
+}
+
+/* Open pantry */
+
 
 
 footer {

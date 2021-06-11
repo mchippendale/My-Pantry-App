@@ -1,12 +1,5 @@
 
 
-<div class="view-pantry">
-
-      <% if logged_in? %>
-        <a href="/session/<%= session[:user_id] %>">Open your pantry</a>
-      <% end %>
-
-</div>
 
 <div class="featured-pantry-container">
     <div class="pantry1-wrapper">
@@ -54,6 +47,12 @@
     </div>
 </div>
 
+<div class="view-pantry">
 
+      <% if logged_in? %>
+        <a href="/session/<%= session[:user_id] %>" id="open-your-pantry">Open your pantry</a>
+      <% end %>
+
+</div>
 
 
