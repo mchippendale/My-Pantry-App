@@ -170,20 +170,23 @@ put '/items/:id/edit' do
     user_id
   ])
 
-  redirect "/items/#{session[:user_id]}"
+  redirect "/items/#{user_id}"
 
 end
 
 
 post '/items/:id/new' do
+  image_upload = ""
 
   user_id = session[:user_id].to_i
   user = run_sql("SELECT username FROM users WHERE id = #{user_id}")[0]
   username = user['username']
   
-  res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+  if params["image_upload"]
+    res = Cloudinary::Uploader.upload(params["image_upload"]['tempfile'], options)
+    image_upload = res['url']
+  end
 
-  image_upload = res['url']
   sql = "INSERT INTO items (name, image_url, comment, user_id, username, image_upload) VALUES ($1, $2, $3, $4, $5, $6);"
 
   run_sql(sql, [
@@ -195,7 +198,7 @@ post '/items/:id/new' do
     image_upload,
   ])
 
-  redirect "/items/:id"
+  redirect "/items/#{user_id}"
 
 end
 
